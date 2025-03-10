@@ -7,6 +7,6 @@ namespace Data.Repositories
     {
         void Save(T entity);
         void Delete(T entity);
-        T Get(Guid id);
+        T Get(string id);
     }
 }

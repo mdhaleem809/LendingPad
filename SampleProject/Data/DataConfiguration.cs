@@ -2,9 +2,8 @@
 using BusinessEntities;
 using Common;
 using Raven.Client;
-using Raven.Client.Document;
-using Raven.Client.Indexes;
-using Raven.Imports.Newtonsoft.Json;
+using Raven.Client.Documents;
+using Raven.Client.Documents.Indexes;
 using SimpleInjector;
 
 namespace Data
@@ -35,21 +34,21 @@ namespace Data
         {
             var documentStore = new DocumentStore
                                 {
-                                    Url = "http://localhost:8080/",
-                                    DefaultDatabase = "SampleProject",
+                                    Urls = new[] { "http://localhost:8080/" },
+                                    Database = "SampleProject",
                                     Conventions =
                                     {
-                                        DefaultUseOptimisticConcurrency = true,
-                                        DocumentKeyGenerator = (dbname, commands, entity) => "",
+                                        UseOptimisticConcurrency = true,
+                                        //DocumentKeyGenerator = (dbname, commands, entity) => "",
                                         SaveEnumsAsIntegers = true,
-                                        CustomizeJsonSerializer = serializer =>
-                                                                  {
-                                                                      serializer.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-                                                                      serializer.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
-                                                                      serializer.DefaultValueHandling = DefaultValueHandling.Ignore;
-                                                                      serializer.DateFormatHandling = DateFormatHandling.IsoDateFormat;
-                                                                      serializer.NullValueHandling = NullValueHandling.Include;
-                                                                  },
+                                        //CustomizeJsonSerializer = serializer =>
+                                        //                          {
+                                        //                              serializer.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                                        //                              serializer.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
+                                        //                              serializer.DefaultValueHandling = DefaultValueHandling.Ignore;
+                                        //                              serializer.DateFormatHandling = DateFormatHandling.IsoDateFormat;
+                                        //                              serializer.NullValueHandling = NullValueHandling.Include;
+                                        //                          },
                                     }
                                 };
 

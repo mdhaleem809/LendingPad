@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "26c5397e-2163-4643-ae23-13c5eb581e25",
+		"_postman_id": "7f53294a-c183-4ee0-9885-4d7f8e149c84",
 		"name": "LendingPad-SampleProject",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30292534"
+		"_exporter_id": "8334830"
 	},
 	"item": [
 		{
@@ -15,12 +15,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:49834/users/clear",
+							"raw": "http://localhost:57488/users/clear",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "49834",
+							"port": "57488",
 							"path": [
 								"users",
 								"clear"
@@ -44,12 +44,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:49834/users/1422740e-6426-4c46-8445-3f5274a62424/create",
+							"raw": "http://localhost:57488/users/1422740e-6426-4c46-8445-3f5274a62424/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "49834",
+							"port": "57488",
 							"path": [
 								"users",
 								"1422740e-6426-4c46-8445-3f5274a62424",
@@ -74,12 +74,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:49834/users/9422740e-6426-4c46-8445-3f5274a62424/create",
+							"raw": "http://localhost:57488/users/9422740e-6426-4c46-8445-3f5274a62424/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "49834",
+							"port": "57488",
 							"path": [
 								"users",
 								"9422740e-6426-4c46-8445-3f5274a62424",
@@ -104,12 +104,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:49834/users/8722740e-6426-4c46-8445-3f5274a62424/create",
+							"raw": "http://localhost:57488/users/8722740e-6426-4c46-8445-3f5274a62424/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "49834",
+							"port": "57488",
 							"path": [
 								"users",
 								"8722740e-6426-4c46-8445-3f5274a62424",
@@ -139,12 +139,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:49834/users/1422740e-6426-4c46-8445-3f5274a62424/create",
+							"raw": "http://localhost:57488/users/1422740e-6426-4c46-8445-3f5274a62424/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "49834",
+							"port": "57488",
 							"path": [
 								"users",
 								"1422740e-6426-4c46-8445-3f5274a62424",
@@ -169,12 +169,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:49834/users/9422740e-6426-4c46-8445-3f5274a62424/update",
+							"raw": "http://localhost:57488/users/9422740e-6426-4c46-8445-3f5274a62424/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "49834",
+							"port": "57488",
 							"path": [
 								"users",
 								"9422740e-6426-4c46-8445-3f5274a62424",
@@ -199,12 +199,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:49834/users/9422740e-6426-4c46-8445-3f5274a62424/update",
+							"raw": "http://localhost:57488/users/9422740e-6426-4c46-8445-3f5274a62424/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "49834",
+							"port": "57488",
 							"path": [
 								"users",
 								"9422740e-6426-4c46-8445-3f5274a62424",
@@ -229,12 +229,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:49834/users/9422740e-6426-4c46-8445-3f5274a62424/update",
+							"raw": "http://localhost:57488/users/9422740e-6426-4c46-8445-3f5274a62424/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "49834",
+							"port": "57488",
 							"path": [
 								"users",
 								"9422740e-6426-4c46-8445-3f5274a62424",
@@ -250,12 +250,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:49834/users/list/tag?tag=C",
+							"raw": "http://localhost:57488/users/list/tag?tag=C",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "49834",
+							"port": "57488",
 							"path": [
 								"users",
 								"list",
@@ -278,11 +278,433 @@
 			"item": [
 				{
 					"name": "Products",
-					"item": []
+					"item": [
+						{
+							"name": "Create Product - Vaccum Cleaner",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "//The exception \"PUT attempted on document 'users/1422740e-6426-4c46-8445-3f5274a62424' using a non current etag\" means that the record with the same ID already exists.\r\n{\r\n    \"productName\": \"Vaccum Cleaner\",\r\n    \"productDescription\": \"Used to clean house.\",\r\n    \"unitPrice\": 160.35,\r\n    \"unitsInStock\": 29\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:57488/products/1422740e-6426-4c46-8445-3f5274a62424/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "57488",
+									"path": [
+										"products",
+										"1422740e-6426-4c46-8445-3f5274a62424",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Product - Watch",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "//The exception \"PUT attempted on document 'users/1422740e-6426-4c46-8445-3f5274a62424' using a non current etag\" means that the record with the same ID already exists.\r\n{\r\n    \"productName\": \"Rolex Watch\",\r\n    \"productDescription\": \"Shows time.\",\r\n    \"unitPrice\": 500.35,\r\n    \"unitsInStock\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:57488/products/9422740e-6426-4c46-8445-3f5274a62424/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "57488",
+									"path": [
+										"products",
+										"9422740e-6426-4c46-8445-3f5274a62424",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Product - Vaccum Cleaner",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productName\": \"Vaccum Cleaner (updated)\",\r\n    \"productDescription\": \"Used to clean house.\",\r\n    \"unitPrice\": 500.35,\r\n    \"unitsInStock\": 29\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:57488/products/1422740e-6426-4c46-8445-3f5274a62424/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "57488",
+									"path": [
+										"products",
+										"1422740e-6426-4c46-8445-3f5274a62424",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Products By ProductId - Vaccum Cleaner",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:57488/products/GetProductById?productId=1422740e-6426-4c46-8445-3f5274a62424",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "57488",
+									"path": [
+										"products",
+										"GetProductById"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": "1422740e-6426-4c46-8445-3f5274a62424"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Products By ProductId - Watch",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:57488/products/GetProductById?productId=9422740e-6426-4c46-8445-3f5274a62424",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "57488",
+									"path": [
+										"products",
+										"GetProductById"
+									],
+									"query": [
+										{
+											"key": "productId",
+											"value": "9422740e-6426-4c46-8445-3f5274a62424"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Products By List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:57488/products/list?productName=&productDescription&unitPrice=&unitsInStock=",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "57488",
+									"path": [
+										"products",
+										"list"
+									],
+									"query": [
+										{
+											"key": "productName",
+											"value": ""
+										},
+										{
+											"key": "productDescription",
+											"value": null
+										},
+										{
+											"key": "unitPrice",
+											"value": ""
+										},
+										{
+											"key": "unitsInStock",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product - Vaccum Cleaner",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:57488/products/1422740e-6426-4c46-8445-3f5274a62424/delete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "57488",
+									"path": [
+										"products",
+										"1422740e-6426-4c46-8445-3f5274a62424",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				},
 				{
 					"name": "Orders",
-					"item": []
+					"item": [
+						{
+							"name": "Create Order - Vaccum Cleaner",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "//The exception \"PUT attempted on document 'users/1422740e-6426-4c46-8445-3f5274a62424' using a non current etag\" means that the record with the same ID already exists.\r\n{\r\n    \"orderName\": \"Vaccum Cleaner\",\r\n    \"productId\": \"1422740e-6426-4c46-8445-3f5274a62424\",\r\n    \"price\": 160.35,\r\n    \"quantity\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:57488/orders/1422740e-6426-4c46-8445-3f5274a62426/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "57488",
+									"path": [
+										"orders",
+										"1422740e-6426-4c46-8445-3f5274a62426",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Order - Watch",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "//The exception \"PUT attempted on document 'users/1422740e-6426-4c46-8445-3f5274a62424' using a non current etag\" means that the record with the same ID already exists.\r\n{\r\n    \"orderName\": \"Rolex Order\",\r\n    \"productId\": \"9422740e-6426-4c46-8445-3f5274a62424\",\r\n    \"price\": 160.35,\r\n    \"quantity\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:57488/orders/9422740e-6426-4c46-8445-3f5274a62424/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "57488",
+									"path": [
+										"orders",
+										"9422740e-6426-4c46-8445-3f5274a62424",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Order - Vaccum Cleaner",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "//The exception \"PUT attempted on document 'users/1422740e-6426-4c46-8445-3f5274a62424' using a non current etag\" means that the record with the same ID already exists.\r\n{\r\n    \"orderName\": \"Rolex Order\",\r\n    \"productId\": \"9422740e-6426-4c46-8445-3f5274a62424\",\r\n    \"price\": 160.35,\r\n    \"quantity\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:57488/orders/9422740e-6426-4c46-8445-3f5274a62424/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "57488",
+									"path": [
+										"orders",
+										"9422740e-6426-4c46-8445-3f5274a62424",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Orders By OrderId - Vaccum Cleaner",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:57488/orders/GetOrderById?orderId=1422740e-6426-4c46-8445-3f5274a62426",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "57488",
+									"path": [
+										"orders",
+										"GetOrderById"
+									],
+									"query": [
+										{
+											"key": "orderId",
+											"value": "1422740e-6426-4c46-8445-3f5274a62426"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Orders By OrderId - Watch",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:57488/orders/GetOrderById?orderId=9422740e-6426-4c46-8445-3f5274a62424",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "57488",
+									"path": [
+										"orders",
+										"GetOrderById"
+									],
+									"query": [
+										{
+											"key": "orderId",
+											"value": "9422740e-6426-4c46-8445-3f5274a62424"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Orders By List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:57488/orders/list?OrderName=&ProductId&Price=&Quantity=",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "57488",
+									"path": [
+										"orders",
+										"list"
+									],
+									"query": [
+										{
+											"key": "OrderName",
+											"value": ""
+										},
+										{
+											"key": "ProductId",
+											"value": null
+										},
+										{
+											"key": "Price",
+											"value": ""
+										},
+										{
+											"key": "Quantity",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Order - Vaccum Cleaner",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:57488/orders/1422740e-6426-4c46-8445-3f5274a62426/delete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "57488",
+									"path": [
+										"orders",
+										"1422740e-6426-4c46-8445-3f5274a62426",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}

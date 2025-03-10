@@ -6,9 +6,9 @@ namespace BusinessEntities
 {
     public abstract class IdObject
     {
-        private Guid _id = Guid.NewGuid();
+        private string _id;
 
-        public Guid Id
+        public string Id
         {
             get => _id;
             private set => _id = value;
@@ -19,12 +19,12 @@ namespace BusinessEntities
             return other != null && Id.Equals(other.Id);
         }
 
-        public static T GetById<T>(IEnumerable<T> items, Guid id) where T : IdObject
+        public static T GetById<T>(IEnumerable<T> items, string id) where T : IdObject
         {
             return items.FirstOrDefault(item => item.Id == id);
         }
 
-        public static IList<Guid> Ids<T>(IEnumerable<T> items) where T : IdObject
+        public static IList<string> Ids<T>(IEnumerable<T> items) where T : IdObject
         {
             return items.Select(q => q.Id).ToList();
         }

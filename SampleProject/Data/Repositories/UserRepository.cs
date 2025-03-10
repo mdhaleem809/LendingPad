@@ -3,7 +3,7 @@ using System.Linq;
 using BusinessEntities;
 using Common;
 using Data.Indexes;
-using Raven.Client;
+using Raven.Client.Documents.Session;
 
 namespace Data.Repositories
 {
@@ -38,7 +38,7 @@ namespace Data.Repositories
                 {
                     hasFirstParameter = true;
                 }
-                query = query.Where($"Name:*{name}*");
+                query = (IDocumentQuery<User>)query.Where(x => x.Name.Contains(name));
             }
 
             if (email != null)
@@ -49,6 +49,19 @@ namespace Data.Repositories
                 }
                 query = query.WhereEquals("Email", email);
             }
+            return query.ToList();
+        }
+
+        public IEnumerable<User> GetByTag(string tag)
+        {
+            var query = _documentSession.Advanced.DocumentQuery<User, UsersListIndex>();
+
+            if (!string.IsNullOrEmpty(tag) )
+            {
+                List<string> tags = new List<string> { tag };
+                query = query.WhereIn("Tags", tags);
+            }
+
             return query.ToList();
         }
 

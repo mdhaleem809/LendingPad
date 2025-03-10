@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using BusinessEntities;
@@ -26,15 +27,23 @@ namespace WebApi.Controllers
 
         [Route("{userId:guid}/create")]
         [HttpPost]
-        public HttpResponseMessage CreateUser(Guid userId, [FromBody] UserModel model)
+        public HttpResponseMessage CreateUser(string userId, [FromBody] UserModel model)
         {
-            var user = _createUserService.Create(userId, model.Name, model.Email, model.Type, model.AnnualSalary, model.Tags);
-            return Found(new UserData(user));
+            var entity = _getUserService.GetUser(userId);
+            if (entity == null)
+            {
+                var user = _createUserService.Create(userId, model.Name, model.Email, model.Type, model.AnnualSalary, model.Tags);
+                return Found(new UserData(user));
+            }
+            else
+            {
+                return ControllerContext.Request.CreateResponse(HttpStatusCode.OK, "User Already Exist");
+            }
         }
 
         [Route("{userId:guid}/update")]
         [HttpPost]
-        public HttpResponseMessage UpdateUser(Guid userId, [FromBody] UserModel model)
+        public HttpResponseMessage UpdateUser(string userId, [FromBody] UserModel model)
         {
             var user = _getUserService.GetUser(userId);
             if (user == null)
@@ -47,7 +56,7 @@ namespace WebApi.Controllers
 
         [Route("{userId:guid}/delete")]
         [HttpDelete]
-        public HttpResponseMessage DeleteUser(Guid userId)
+        public HttpResponseMessage DeleteUser(string userId)
         {
             var user = _getUserService.GetUser(userId);
             if (user == null)
@@ -60,7 +69,7 @@ namespace WebApi.Controllers
 
         [Route("{userId:guid}")]
         [HttpGet]
-        public HttpResponseMessage GetUser(Guid userId)
+        public HttpResponseMessage GetUser(string userId)
         {
             var user = _getUserService.GetUser(userId);
             return Found(new UserData(user));
@@ -89,7 +98,10 @@ namespace WebApi.Controllers
         [HttpGet]
         public HttpResponseMessage GetUsersByTag(string tag)
         {
-            throw new NotImplementedException();
+            var users = _getUserService.GetUsersByTag(tag)
+                                       .Select(q => new UserData(q))
+                                       .ToList();
+            return Found(users);
         }
     }
 }

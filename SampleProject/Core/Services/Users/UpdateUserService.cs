@@ -12,7 +12,10 @@ namespace Core.Services.Users
             user.SetEmail(email);
             user.SetName(name);
             user.SetType(type);
-            user.SetMonthlySalary(annualSalary.Value / 12);
+            if(annualSalary!=null)
+                user.SetMonthlySalary(annualSalary.Value / 12);
+            else
+                user.SetMonthlySalary(0);
             user.SetTags(tags);
         }
     }

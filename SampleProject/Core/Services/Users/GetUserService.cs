@@ -16,7 +16,7 @@ namespace Core.Services.Users
             _userRepository = userRepository;
         }
 
-        public User GetUser(Guid id)
+        public User GetUser(string id)
         {
             return _userRepository.Get(id);
         }
@@ -24,6 +24,11 @@ namespace Core.Services.Users
         public IEnumerable<User> GetUsers(UserTypes? userType = null, string name = null, string email = null)
         {
             return _userRepository.Get(userType, name, email);
+        }
+
+        public IEnumerable<User> GetUsersByTag(string tag)
+        {
+            return _userRepository.GetByTag(tag);
         }
     }
 }

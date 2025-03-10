@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using BusinessEntities;
-using Raven.Abstractions.Indexing;
-using Raven.Client.Indexes;
+using Raven.Client.Documents.Indexes;
 
 namespace Data.Indexes
 {
@@ -14,10 +13,11 @@ namespace Data.Indexes
                                   {
                                       user.Name,
                                       user.Email,
-                                      user.Type
+                                      user.Type,
+                                      user.Tags
                                   };
 
-            Index(x => x.Type, FieldIndexing.NotAnalyzed);
+            Index(x => x.Id, FieldIndexing.No);
         }
     }
 }
